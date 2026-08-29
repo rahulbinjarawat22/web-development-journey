@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Raksha ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#08000c;
+    color:white;
+    overflow-x:hidden;
+}
+
+.screen{
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.screen.active{
+    display:flex;
+}
+
+.bg{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%,#ff176f44,transparent 30%),
+      radial-gradient(circle at 80% 80%,#9b00ff44,transparent 30%),
+      linear-gradient(135deg,#08000c,#220018,#08000c);
+    z-index:-2;
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(#fff 1px,transparent 1px);
+    background-size:45px 45px;
+    opacity:.15;
+    animation:moveStars 20s linear infinite;
+}
+
+@keyframes moveStars{
+    from{transform:translateY(0)}
+    to{transform:translateY(-45px)}
+}
+
+/* HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:22px;
+    animation:float 7s linear infinite;
+    pointer-events:none;
+    z-index:20;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0
+    }
+
+    10%{
+        opacity:1
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0
+    }
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    max-width:700px;
+}
+
+.small{
+    color:#ff8bb8;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+h1{
+    font-family:"Great Vibes",cursive;
+    font-size:80px;
+    color:#ff72a9;
+    text-shadow:0 0 30px #ff176f;
+}
+
+.intro h2{
+    font-size:22px;
+    font-weight:300;
+    margin:10px 0 35px;
+}
+
+.mainBtn{
+    border:none;
+    padding:16px 35px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff176f,#b000ff);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 0 30px #ff176f88;
+    transition:.3s;
+}
+
+.mainBtn:hover{
+    transform:scale(1.07);
+}
+
+/* CARD */
+
+.card{
+    width:min(900px,100%);
+    text-align:center;
+    background:#ffffff0d;
+    border:1px solid #ffffff1c;
+    backdrop-filter:blur(15px);
+    padding:35px 25px;
+    border-radius:30px;
+    box-shadow:0 0 60px #ff176f22;
+}
+
+.title{
+    font-family:"Great Vibes",cursive;
+    color:#ff75aa;
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#ddd;
+    margin-bottom:25px;
+}
+
+/* PHOTOS */
+
+.photoBox{
+    width:100%;
+    min-height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    border-radius:25px;
+    background:#0005;
+    margin:20px 0;
+}
+
+.photoBox img{
+    width:100%;
+    max-height:600px;
+    object-fit:contain;
+    border-radius:20px;
+    animation:photoIn .7s ease;
+}
+
+@keyframes photoIn{
+    from{
+        opacity:0;
+        transform:scale(.85)
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1)
+    }
+}
+
+.controls{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin:20px 0;
+}
+
+.btn{
+    padding:12px 20px;
+    border:1px solid #ffffff22;
+    border-radius:30px;
+    background:#ffffff12;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ff176f;
+    transform:translateY(-3px);
+}
+
+.message{
+    display:none;
+    background:#ffffff0d;
+    border-radius:20px;
+    padding:25px;
+    margin-top:20px;
+    line-height:1.9;
+    animation:popup .6s ease;
+}
+
+.message.show{
+    display:block;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.9)
+    }
+
+    to{
+        opacity:1;
+        transform:none
+    }
+}
+
+.love{
+    font-size:45px;
+    font-weight:700;
+    color:#ff5d9a;
+    text-shadow:0 0 25px #ff176f;
+    margin:25px 0;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.08)
+    }
+}
+
+/* PHOTO BUTTON */
+
+input[type=file]{
+    display:none;
+}
+
+.fileBtn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:30px;
+    background:#ffffff12;
+    border:1px solid #ffffff22;
+    cursor:pointer;
+}
+
+.fileBtn:hover{
+    background:#ff176f;
+}
+
+/* PROGRESS */
+
+.progress{
+    height:5px;
+    background:#ffffff18;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.bar{
+    height:100%;
+    width:0%;
+    background:#ff4f91;
+    border-radius:10px;
+    transition:.5s;
+}
+
+.counter{
+    color:#aaa;
+    font-size:13px;
+}
+
+/* CAKE */
+
+.cake{
+    font-size:100px;
+    animation:cakeFloat 2s infinite ease-in-out;
+}
+
+@keyframes cakeFloat{
+    50%{
+        transform:translateY(-10px)
+    }
+}
+
+/* FINAL */
+
+.finalText{
+    font-family:"Great Vibes",cursive;
+    font-size:70px;
+    color:#ff72a9;
+    text-shadow:0 0 35px #ff176f;
+}
+
+.from{
+    margin-top:25px;
+    font-size:18px;
+    color:#ddd;
+}
+
+
+/* =========================
+   SHAYARI
+========================= */
+
+.shayariBox{
+    position:relative;
+    min-height:440px;
+    margin:25px auto;
+    max-width:760px;
+}
+
+.shayari{
+    display:none;
+    padding:30px 25px;
+    border-radius:25px;
+    background:
+      linear-gradient(145deg,#ff176f12,#a000ff12);
+    border:1px solid #ffffff20;
+    animation:shayariShow .7s ease;
+}
+
+.shayari.active{
+    display:block;
+}
+
+.shayariIcon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.shayari p{
+    font-family:"Great Vibes",cursive;
+    font-size:30px;
+    line-height:1.75;
+    color:#ffe6ef;
+}
+
+@keyframes shayariShow{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.shayariControls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin:15px 0 20px;
+}
+
+.shayariNumber{
+    color:#ffb1ca;
+    font-size:14px;
+}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+    margin-bottom:25px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ffffff30;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#ff5c96;
+    box-shadow:0 0 12px #ff5c96;
+}
+
+
+/* =========================
+   RAKSHA KI TARIF
+========================= */
+
+.praiseBox{
+    display:grid;
+    gap:15px;
+    margin:25px auto;
+    max-width:750px;
+}
+
+.praise{
+    text-align:left;
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    padding:20px;
+    border-radius:22px;
+    background:#ffffff09;
+    border:1px solid #ffffff15;
+    transition:.3s;
+    animation:praiseShow .7s ease;
+}
+
+.praise:hover{
+    transform:translateY(-4px);
+    background:#ff176f12;
+}
+
+.praiseIcon{
+    font-size:30px;
+    min-width:35px;
+}
+
+.praise p{
+    color:#f0dce5;
+    line-height:1.8;
+}
+
+@keyframes praiseShow{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.specialLine{
+    margin-top:25px;
+    padding:22px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#ff176f18,#a000ff18);
+    border:1px solid #ffffff18;
+    font-family:"Great Vibes",cursive;
+    font-size:30px;
+    line-height:1.6;
+    color:#ffd8e6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:58px;
+    }
+
+    .title{
+        font-size:50px;
+    }
+
+    .card{
+        padding:25px 15px;
+    }
+
+    .photoBox{
+        min-height:250px;
+    }
+
+    .finalText{
+        font-size:55px;
+    }
+
+    .shayari{
+        padding:25px 17px;
+    }
+
+    .shayari p{
+        font-size:25px;
+    }
+
+    .shayariBox{
+        min-height:470px;
+    }
+
+    .praise{
+        padding:16px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="bg"></div>
+<div class="stars"></div>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="screen active" id="screen1">
+
+    <div class="intro">
+
+        <div class="small">
+            A LITTLE SURPRISE FOR YOU ❤️
+        </div>
+
+        <h1>
+            Raksha
+        </h1>
+
+        <h2>
+            Someone very special has a birthday today...
+            <br>
+            and this is just for you ❤️
+        </h2>
+
+        <button class="mainBtn" onclick="nextScreen(2)">
+            💖 Open My Surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PHOTOS
+========================= -->
+
+<section class="screen" id="screen2">
+
+<div class="card">
+
+    <div class="small">
+        MEMORIES OF YOU
+    </div>
+
+    <div class="title">
+        Beautiful Raksha ❤️
+    </div>
+
+    <p class="subtitle">
+        Har photo mein tum aur bhi special lagti ho...
+    </p>
+
+
+    <label class="fileBtn">
+
+        📸 Choose Raksha's Photos
+
+        <input
+            type="file"
+            id="photoInput"
+            accept="image/*"
+            multiple
+        >
+
+    </label>
+
+
+    <div class="photoBox">
+
+        <img
+            id="photo"
+            src=""
+            alt="Raksha"
+        >
+
+    </div>
+
+
+    <div class="counter" id="counter">
+
+        Please choose your photos ❤️
+
+    </div>
+
+
+    <div class="controls">
+
+        <button
+            class="btn"
+            onclick="previousPhoto()"
+        >
+            ⬅ Previous
+        </button>
+
+
+        <button
+            class="btn"
+            onclick="nextPhoto()"
+        >
+            Next ➡
+        </button>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div
+            class="bar"
+            id="bar"
+        ></div>
+
+    </div>
+
+
+    <button
+        class="mainBtn"
+        onclick="nextScreen(3)"
+    >
+        🌹 Shayari For You
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STEP 1 — SHAYARI
+========================= -->
+
+<section class="screen" id="screen3">
+
+<div class="card">
+
+    <div class="small">
+        JUST FOR MY JANA ❤️
+    </div>
+
+    <div class="title">
+        Kuch Alfaaz Tumhare Liye 🌹
+    </div>
+
+    <p class="subtitle">
+        Jo dil mein hai... woh aaj kehna hai.
+    </p>
+
+
+    <div class="shayariBox">
+
+
+        <!-- SHAYARI 1 -->
+
+        <div class="shayari active">
+
+            <div class="shayariIcon">
+                🌊
+            </div>
+
+            <p>
+
+                Tu bahti nadi si hai,<br>
+                ruka hua hoon main...<br><br>
+
+                Tu mukammal si hai,<br>
+                toota hua hoon main...<br><br>
+
+                Tere aage mera koi wajood hi nahi,<br>
+                jaane kaisi hai tu...<br>
+
+                tujh par hi luta hua hoon main. ❤️
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SHAYARI 2 -->
+
+        <div class="shayari">
+
+            <div class="shayariIcon">
+                🥰
+            </div>
+
+            <p>
+
+                Tum hasho to khushi hoti hai,<br>
+
+                tum rutho to aankh meri roti hai...<br><br>
+
+                Tum door jao to bechaini hoti hai,<br>
+
+                mehsoos karke dekho...<br>
+
+                mohabbat aise hoti hai. ❤️
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SHAYARI 3 -->
+
+        <div class="shayari">
+
+            <div class="shayariIcon">
+                💐
+            </div>
+
+            <p>
+
+                Haath mein mohabbat ka woh guldaasta banana hai,<br><br>
+
+                tumhein zamaane ki nazaron se chhupa kar<br>
+                kahin door le jaana hai...<br><br>
+
+                Tum kehti rehna apni woh saadagi bhari baatein,<br>
+
+                aur mujhe toh bas umr bhar<br>
+
+                tumhari in aankhon mein kho-kho jaana hai. ❤️
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SHAYARI 4 -->
+
+        <div class="shayari">
+
+            <div class="shayariIcon">
+                🌹
+            </div>
+
+            <p>
+
+                Ek gulaab ke liye kya likhu,<br>
+                mere pyaar ke liye kya likhu...<br><br>
+
+                Woh un khoobsurat gulaabon jaisi hai<br>
+
+                jise main roz apne dil ke kareeb<br>
+                rakh kar sona chahta hoon.<br><br>
+
+                Chahta hoon ki usmein pyaar ki khushboo<br>
+                is kadar ghol doon ki jab bhi woh khud ko dekhe,<br>
+
+                toh usse khud se behad pyaar ho jaaye. ❤️
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SHAYARI 5 -->
+
+        <div class="shayari">
+
+            <div class="shayariIcon">
+                ✨
+            </div>
+
+            <p>
+
+                Main chahta hoon bataun usse<br>
+                uski baatein, uska alhadpan,<br>
+
+                uske reshmi jaise mulayam haath...<br><br>
+
+                Aur uparwale ke baagiche mein khilne wale<br>
+                pyaare phoolon jaisi uski muskurahat<br>
+
+                mujhe kitni bhaati hai.<br><br>
+
+                Meri jhalli, pyaari si pagli,<br>
+
+                mujhe itna satati hai. ❤️
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SHAYARI 6 -->
+
+        <div class="shayari">
+
+            <div class="shayariIcon">
+                🥹❤️
+            </div>
+
+            <p>
+
+                Ho jaati hai naraaz jab,<br>
+
+                bachchon ki tarah muh phulati hai...<br><br>
+
+                Magar kuch der baad<br>
+
+                khud hi aakar meri baahon se lipat jaati hai. ❤️
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="shayariControls">
+
+        <button
+            class="btn"
+            onclick="previousShayari()"
+        >
+            ⬅️
+        </button>
+
+
+        <span
+            class="shayariNumber"
+            id="shayariNumber"
+        >
+            1 / 6
+        </span>
+
+
+        <button
+            class="btn"
+            onclick="nextShayari()"
+        >
+            ➡️
+        </button>
+
+    </div>
+
+
+    <div
+        class="dots"
+        id="dots"
+    ></div>
+
+
+    <button
+        class="mainBtn"
+        onclick="nextScreen(4)"
+    >
+        💖 Tumhari Tarif
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STEP 2 — RAKSHA KI TARIF
+========================= -->
+
+<section class="screen" id="screen4">
+
+<div class="card">
+
+    <div class="small">
+        ONLY FOR YOU, RAKSHA ❤️
+    </div>
+
+
+    <div class="title">
+        Tum Itni Special Kyun Ho? ✨
+    </div>
+
+
+    <p class="subtitle">
+        Shayad main sab kuch words mein explain na kar paun...
+        but I really want you to know this.
+    </p>
+
+
+    <div class="praiseBox">
+
+
+        <div class="praise">
+
+            <div class="praiseIcon">
+                🌸
+            </div>
+
+            <p>
+
+                Tumhari smile mein pata nahi kya baat hai...
+                tum smile karti ho toh mera mood
+                bina kisi reason ke achha ho jaata hai.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="praise">
+
+            <div class="praiseIcon">
+                👀
+            </div>
+
+            <p>
+
+                Tumhari aankhon mein ek alag hi sukoon hai.
+                Sach kahun toh unmein dekhte-dekhte
+                waqt ka pata hi nahi chalta.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="praise">
+
+            <div class="praiseIcon">
+                🥰
+            </div>
+
+            <p>
+
+                Tumhari simplicity hi tumhari
+                sabse khoobsurat quality hai.
+                Tum jaisi ho...
+                waise hi bahut special ho.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="praise">
+
+            <div class="praiseIcon">
+                💕
+            </div>
+
+            <p>
+
+                Tumhari cute si baatein,
+                tumhara gussa,
+                tumhara ruthna,
+                aur phir thodi der baad khud hi maan jaana...
+                mujhe sab kuch bahut pasand hai.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="praise">
+
+            <div class="praiseIcon">
+                🫶
+            </div>
+
+            <p>
+
+                Pata nahi maine zindagi mein aisa kya achha kiya tha
+                jo tum meri zindagi mein aayi...
+                lekin jo bhi kiya tha,
+                shayad bahut achha kiya tha.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="specialLine">
+
+        Tum sirf meri girlfriend nahi ho... ❤️
+
+        <br>
+
+        Tum meri khushi,
+        mera sukoon
+        aur meri har dua ka
+        sabse khoobsurat hissa ho.
+
+    </div>
+
+
+    <div class="love">
+
+        Happy Birthday My Lifeline ❤️
+
+    </div>
+
+
+    <button
+        class="mainBtn"
+        onclick="speakMessage()"
+    >
+        🎙️ Rahul Ki Voice
+    </button>
+
+
+    <br><br>
+
+
+    <button
+        class="mainBtn"
+        onclick="nextScreen(5)"
+    >
+        🎂 One More Surprise
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ORIGINAL MESSAGE
+========================= -->
+
+<section class="screen" id="screen5">
+
+<div class="card">
+
+    <div class="small">
+        FROM RAHUL ❤️
+    </div>
+
+
+    <div class="title">
+        For My Jana
+    </div>
+
+
+    <div class="message show">
+
+        <p>
+            Raksha... ❤️
+        </p>
+
+        <br>
+
+        <p>
+
+            Pata nahi tumhe ye sab kitna pasand aayega,
+            lekin maine ye chhota sa surprise
+            sirf tumhare liye banaya hai.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            Tum meri life ki un special people mein se ho
+            jinke hone se sab kuch thoda aur beautiful lagta hai.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            Tumhari smile mujhe bahut pasand hai,
+            tumhari cute si baatein,
+            aur sabse zyada...
+
+            <b>
+                tumhara mere life mein hona.
+            </b>
+
+            ❤️
+
+        </p>
+
+        <br>
+
+        <p>
+
+            I just want to see you happy,
+            today and always.
+
+        </p>
+
+    </div>
+
+
+    <div class="love">
+        I LOVE YOU RAKSHA ❤️
+    </div>
+
+
+    <button
+        class="mainBtn"
+        onclick="speakMessage()"
+    >
+        🎙️ Rahul Ki Voice
+    </button>
+
+
+    <br><br>
+
+
+    <button
+        class="mainBtn"
+        onclick="nextScreen(6)"
+    >
+        🎂 One More Surprise
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CAKE
+========================= -->
+
+<section class="screen" id="screen6">
+
+<div class="card">
+
+    <div class="small">
+        MAKE A WISH ✨
+    </div>
+
+
+    <div class="title">
+        Happy Birthday
+    </div>
+
+
+    <div
+        class="cake"
+        id="cake"
+    >
+        🎂
+    </div>
+
+
+    <h2>
+        Happy Birthday Raksha ❤️
+    </h2>
+
+
+    <p style="margin:15px 0;color:#ccc">
+
+        Close your eyes... make a wish...
+
+    </p>
+
+
+    <button
+        class="mainBtn"
+        onclick="celebrate()"
+    >
+        🎉 Blow The Candles
+    </button>
+
+
+    <br><br>
+
+
+    <button
+        class="btn"
+        onclick="nextScreen(7)"
+    >
+        ❤️ Final Message
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="screen" id="screen7">
+
+<div class="card">
+
+    <div class="small">
+        ONCE AGAIN...
+    </div>
+
+
+    <div class="finalText">
+
+        Happy Birthday
+        <br>
+        My Jana ❤️
+
+    </div>
+
+
+    <p
+        style="font-size:20px;margin-top:20px"
+    >
+        Raksha
+    </p>
+
+
+    <p class="from">
+
+        With lots of love ❤️
+
+        <br><br>
+
+        — Rahul
+
+    </p>
+
+
+    <div class="love">
+
+        ❤️ I LOVE YOU ❤️
+
+    </div>
+
+
+    <p
+        style="
+        color:#ffd4e3;
+        line-height:1.8;
+        margin:20px auto;
+        max-width:600px;
+        "
+    >
+
+        Pata nahi maine zindagi mein aisa kya accha kiya tha
+        jo tum meri zindagi mein aayi...
+
+        <br><br>
+
+        Main bas itna chahta hoon ki tum hamesha muskuraati raho,
+        kyunki tumhari muskurahat meri duniya roshan kar deti hai.
+
+        <br><br>
+
+        Happy Birthday My Jaan ❤️
+
+        <br>
+
+        I Loveeee Youuuuuuuuuu Jaan ❤️
+
+    </p>
+
+
+    <button
+        class="mainBtn"
+        onclick="celebrate()"
+    >
+        🎉 Celebrate Again
+    </button>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+/* =========================
+   SCREEN CHANGE
+========================= */
+
+function nextScreen(number){
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(s => {
+
+        s.classList.remove("active");
+
+    });
+
+
+    const screen =
+    document.getElementById("screen" + number);
+
+
+    if(screen){
+
+        screen.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+    createHearts(15);
+
+}
+
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+const photos = [
+    "photosraksha/r1.jpeg",
+    "photosraksha/r2.jpeg",
+    "photosraksha/r3.jpeg",
+    "photosraksha/r4.jpeg",
+    "photosraksha/r6.jpeg",
+    "photosraksha/r7.jpeg",
+    "photosraksha/r8.jpeg"
+];
+
+let currentPhoto = 0;
+
+function showPhoto(){
+
+    const img = document.getElementById("photo");
+
+    img.src = photos[currentPhoto];
+
+    document.getElementById("counter").innerText =
+        `${currentPhoto + 1} / ${photos.length}`;
+
+    document.getElementById("bar").style.width =
+        ((currentPhoto + 1) / photos.length * 100) + "%";
+}
+
+function nextPhoto(){
+    currentPhoto++;
+
+    if(currentPhoto >= photos.length){
+        currentPhoto = 0;
+    }
+
+    showPhoto();
+}
+
+function previousPhoto(){
+    currentPhoto--;
+
+    if(currentPhoto < 0){
+        currentPhoto = photos.length - 1;
+    }
+
+    showPhoto();
+}
+
+showPhoto();
+
+
+/* =========================
+   SHAYARI SLIDER
+========================= */
+
+let shayariIndex = 0;
+
+
+const shayaris =
+document.querySelectorAll(".shayari");
+
+
+const shayariNumber =
+document.getElementById("shayariNumber");
+
+
+const dots =
+document.getElementById("dots");
+
+
+shayaris.forEach(
+    function(_,index){
+
+        const dot =
+        document.createElement("span");
+
+        dot.className =
+        "dot";
+
+        if(index === 0){
+
+            dot.classList.add("active");
+
+        }
+
+
+        dot.onclick =
+        function(){
+
+            showShayari(index);
+
+        };
+
+
+        dots.appendChild(dot);
+
+    }
+);
+
+
+
+function showShayari(index){
+
+    shayaris.forEach(
+        function(item){
+
+            item.classList.remove("active");
+
+        }
+    );
+
+
+    document
+    .querySelectorAll(".dot")
+    .forEach(
+        function(dot){
+
+            dot.classList.remove("active");
+
+        }
+    );
+
+
+    shayaris[index]
+    .classList.add("active");
+
+
+    document
+    .querySelectorAll(".dot")[index]
+    .classList.add("active");
+
+
+    shayariNumber.innerText =
+    `${index + 1} / ${shayaris.length}`;
+
+
+    shayariIndex = index;
+
+
+    createHearts(5);
+
+}
+
+
+
+function nextShayari(){
+
+    shayariIndex++;
+
+
+    if(
+        shayariIndex >=
+        shayaris.length
+    ){
+
+        shayariIndex = 0;
+
+    }
+
+
+    showShayari(shayariIndex);
+
+}
+
+
+
+function previousShayari(){
+
+    shayariIndex--;
+
+
+    if(shayariIndex < 0){
+
+        shayariIndex =
+        shayaris.length - 1;
+
+    }
+
+
+    showShayari(shayariIndex);
+
+}
+
+
+
+/* =========================
+   VOICE
+========================= */
+
+function speakMessage(){
+
+    if(
+        !("speechSynthesis" in window)
+    ){
+
+        alert(
+            "Is browser mein voice support available nahi hai."
+        );
+
+        return;
+
+    }
+
+
+    speechSynthesis.cancel();
+
+
+    const text = `
+
+    Hey Raksha...
+
+    Happy Birthday, my Jana.
+
+    Aaj ka din mere liye bhi bahut special hai,
+    kyunki aaj ke din tum is duniya mein aayi thi.
+
+    Pata nahi maine zindagi mein aisa kya accha kiya tha
+    jo tum meri zindagi mein aayi.
+
+    Raksha, main shayad har baar words mein express nahi kar pata,
+    lekin tum mere liye bahut special ho.
+
+    Tumhari smile,
+    tumhari cute si baatein,
+    tumhara gussa,
+    tumhara ruthna,
+    aur phir tumhara cute sa maan jaana...
+
+    mujhe ye sab bahut pasand hai.
+
+    Tumhari aankhon mein ek alag hi sukoon hai.
+
+    Aur tumhari smile...
+    woh toh meri favourite hai.
+
+    Main bas itna chahta hoon
+    ki tum hamesha khush raho.
+
+    Tumhare saare dreams pure hon.
+
+    Tumhari life mein kabhi happiness ki kami na ho.
+
+    Thank you meri life mein aane ke liye.
+
+    Thank you mujhe itne beautiful memories dene ke liye.
+
+    Tum sirf meri girlfriend nahi ho.
+
+    Tum meri khushi,
+    mera sukoon,
+    aur meri har dua ka
+    sabse khoobsurat hissa ho.
+
+    Happy Birthday once again,
+    meri beautiful Jana.
+
+    I love you.
+
+    I loveeee youuuuuuuuu Jaan.
+
+    Always.
+
+    Yours,
+
+    Rahul.
+
+    `;
+
+
+    const voice =
+    new SpeechSynthesisUtterance(text);
+
+
+    voice.lang = "en-IN";
+
+    voice.rate = 0.82;
+
+    voice.pitch = 1.02;
+
+    voice.volume = 1;
+
+
+    speechSynthesis.speak(voice);
+
+}
+
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function celebrate(){
+
+    createHearts(30);
+
+
+    const cake =
+    document.getElementById("cake");
+
+
+    if(cake){
+
+        cake.innerHTML =
+        "🎂✨🎉";
+
+    }
+
+
+    for(
+        let i = 0;
+        i < 120;
+        i++
+    ){
+
+        const confetti =
+        document.createElement("div");
+
+
+        confetti.innerHTML =
+
+        [
+            "❤️",
+            "💖",
+            "✨",
+            "🎉",
+            "💕",
+            "🌸"
+        ]
+        [
+            Math.floor(
+                Math.random() * 6
+            )
+        ];
+
+
+        confetti.style.position =
+        "fixed";
+
+
+        confetti.style.left =
+        Math.random() * 100 + "vw";
+
+
+        confetti.style.top =
+        "-30px";
+
+
+        confetti.style.fontSize =
+        (15 + Math.random() * 25)
+        + "px";
+
+
+        confetti.style.zIndex =
+        "9999";
+
+
+        document.body
+        .appendChild(confetti);
+
+
+        const duration =
+        2 + Math.random() * 3;
+
+
+        confetti.animate(
+
+            [
+
+                {
+                    transform:
+                    "translateY(0) rotate(0deg)",
+
+                    opacity:1
+                },
+
+                {
+                    transform:
+                    `translateY(110vh) rotate(${Math.random()*720}deg)`,
+
+                    opacity:0
+                }
+
+            ],
+
+            {
+
+                duration:
+                duration * 1000,
+
+                easing:"ease-out"
+
+            }
+
+        );
+
+
+        setTimeout(
+            function(){
+
+                confetti.remove();
+
+            },
+            duration * 1000
+        );
+
+    }
+
+}
+
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHearts(amount = 10){
+
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ){
+
+        const heart =
+        document.createElement("div");
+
+
+        heart.className =
+        "heart";
+
+
+        heart.innerHTML =
+
+        [
+            "❤️",
+            "💕",
+            "💖",
+            "💗",
+            "💓"
+        ]
+        [
+            Math.floor(
+                Math.random() * 5
+            )
+        ];
+
+
+        heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+        heart.style.animationDuration =
+        (4 + Math.random() * 5)
+        + "s";
+
+
+        heart.style.fontSize =
+        (15 + Math.random() * 25)
+        + "px";
+
+
+        document.body
+        .appendChild(heart);
+
+
+        setTimeout(
+            function(){
+
+                heart.remove();
+
+            },
+            9000
+        );
+
+    }
+
+}
+
+
+
+/* =========================
+   AUTO HEARTS
+========================= */
+
+setInterval(
+    function(){
+
+        createHearts(2);
+
+    },
+    1500
+);
+
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "ArrowRight"){
+
+            nextPhoto();
+
+        }
+
+
+        if(e.key === "ArrowLeft"){
+
+            previousPhoto();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
